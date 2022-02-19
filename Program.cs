@@ -7,15 +7,45 @@ namespace Address_Book
         public static void Main(string[] args)
         {
             Console.WriteLine("Wellcome to Address Book Program");
-            Input input1 = new Input();
-            input1.input();
 
-            Input input2 = new Input();
-            input2.input();
+            Console.WriteLine("Enter how many contacts you want to store");
+            int number = Convert.ToInt32(Console.ReadLine());
+            AddressBook book = new AddressBook();
 
-                    
-                
-          
+            for (int i = 1; i <= number; i++)
+            {
+
+                Contacts contacts = new Contacts();
+
+                Console.WriteLine("Enter Name");
+                contacts.name = Console.ReadLine();
+
+                Console.WriteLine("Enter address");
+                contacts.address = Console.ReadLine();
+
+                Console.WriteLine("Enter city");
+                contacts.city = Console.ReadLine();
+
+                Console.WriteLine("Enter state");
+                contacts.state = Console.ReadLine();
+
+                Console.WriteLine("Enter zip");
+                contacts.zip = Console.ReadLine();
+
+                Console.WriteLine("Enter Phone number");
+                contacts.phoneNo = Console.ReadLine();
+
+                Console.WriteLine("Enter Phone email");
+                contacts.email = Console.ReadLine();
+
+                book.AddContact(contacts.name, contacts.address, contacts.city, contacts.state, contacts.zip, contacts.phoneNo, contacts.email);
+            }
+
+
+
+
+
+
         }
     }
 }
