@@ -17,7 +17,7 @@ namespace Address_Book
 
                 Contacts contacts = new Contacts();
 
-                Console.WriteLine("Enter Name");
+                Console.WriteLine("\nEnter Name");
                 contacts.name = Console.ReadLine();
 
                 Console.WriteLine("Enter address");
@@ -40,6 +40,10 @@ namespace Address_Book
 
                 book.AddContact(contacts.name, contacts.address, contacts.city, contacts.state, contacts.zip, contacts.phoneNo, contacts.email);
             }
+            Console.WriteLine("\nIf you want to edit contact plz enter name");
+            string name =Console.ReadLine();
+            book.Edit(name);
+
 
 
 
