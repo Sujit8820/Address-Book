@@ -40,16 +40,23 @@ namespace Address_Book
 
                 book.AddContact(contacts.name, contacts.address, contacts.city, contacts.state, contacts.zip, contacts.phoneNo, contacts.email);
             }
-            Console.WriteLine("\nIf you want to edit contact plz enter name");
-            string name =Console.ReadLine();
-            book.Edit(name);
 
+            Console.WriteLine("\nEnter 1 for edit contact & 2 for remove contact");
+            int option = Convert.ToInt32(Console.ReadLine());   
 
-
-
-
-
-
+                switch(option)
+                {
+                case 1:
+                    Console.WriteLine("\nIf you want to edit contact plz enter name");
+                    string name = Console.ReadLine();
+                    book.Edit(name);
+                    break;
+                case 2:
+                    Console.WriteLine("\nIf you want to remove contact plz enter name");
+                    string Name = Console.ReadLine();
+                    book.Remove(Name);
+                    break;
+                }
         }
     }
 }

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Address_Book
 {
-   
-    class AddressBook 
+
+    class AddressBook
     {
-        
-            List<Contacts> contacts = new List<Contacts>();
+
+        List<Contacts> contacts = new List<Contacts>();
 
         public void AddContact(string name, string address, string city, string state, string zip, string phoneNo, string email)
         {
@@ -42,7 +42,7 @@ namespace Address_Book
             Console.WriteLine("Enter 1,2,3,4,5,6 & 7 for edit name,address,city,state,zip,Phone number & email respectively");
             int edit = Convert.ToInt32(Console.ReadLine());
 
-            switch(edit)
+            switch (edit)
             {
                 case 1:
                     Console.WriteLine("Enter new name");
@@ -74,6 +74,21 @@ namespace Address_Book
                     break;
             }
             contacts.Add(editContact);
+            Console.WriteLine($"{name} contact eidted");
+
+        }
+        public void Remove(string name)
+        {
+            Contacts RemoveContact = null;
+            foreach (var contact in contacts)
+            {
+                if (contact.name == name)
+                {
+                    RemoveContact = contact;
+                }
+            }
+            contacts.Remove(RemoveContact);
+            Console.WriteLine($"{name} contact removed");
         }
     }
 }
