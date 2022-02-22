@@ -6,57 +6,12 @@ namespace Address_Book
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Wellcome to Address Book Program");
-
+            Console.WriteLine("Wellcome to Address Book Program\n");
             Console.WriteLine("Enter how many contacts you want to store");
             int number = Convert.ToInt32(Console.ReadLine());
-            AddressBook book = new AddressBook();
+            Input input = new Input();
+            input.TakeInput(number);
 
-            for (int i = 1; i <= number; i++)
-            {
-
-                Contacts contacts = new Contacts();
-
-                Console.WriteLine("\nEnter Name");
-                contacts.name = Console.ReadLine();
-
-                Console.WriteLine("Enter address");
-                contacts.address = Console.ReadLine();
-
-                Console.WriteLine("Enter city");
-                contacts.city = Console.ReadLine();
-
-                Console.WriteLine("Enter state");
-                contacts.state = Console.ReadLine();
-
-                Console.WriteLine("Enter zip");
-                contacts.zip = Console.ReadLine();
-
-                Console.WriteLine("Enter Phone number");
-                contacts.phoneNo = Console.ReadLine();
-
-                Console.WriteLine("Enter Phone email");
-                contacts.email = Console.ReadLine();
-
-                book.AddContact(contacts.name, contacts.address, contacts.city, contacts.state, contacts.zip, contacts.phoneNo, contacts.email);
-            }
-
-            Console.WriteLine("\nEnter 1 for edit contact & 2 for remove contact");
-            int option = Convert.ToInt32(Console.ReadLine());   
-
-                switch(option)
-                {
-                case 1:
-                    Console.WriteLine("\nIf you want to edit contact plz enter name");
-                    string name = Console.ReadLine();
-                    book.Edit(name);
-                    break;
-                case 2:
-                    Console.WriteLine("\nIf you want to remove contact plz enter name");
-                    string Name = Console.ReadLine();
-                    book.Remove(Name);
-                    break;
-                }
         }
     }
 }

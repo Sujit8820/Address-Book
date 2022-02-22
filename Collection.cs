@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Address_Book
 {
 
-    class AddressBook
+    class Collection
     {
 
         List<Contacts> contacts = new List<Contacts>();
@@ -74,7 +74,7 @@ namespace Address_Book
                     break;
             }
             contacts.Add(editContact);
-            Console.WriteLine($"{name} contact eidted");
+            Console.WriteLine($" {name} contact eidted");
 
         }
         public void Remove(string name)
@@ -88,7 +88,7 @@ namespace Address_Book
                 }
             }
             contacts.Remove(RemoveContact);
-            Console.WriteLine($"{name} contact removed");
+            Console.WriteLine($" {name} contact removed");
         }
     }
 }
