@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 namespace Address_Book
 {
 
-    class Collection
+    class AddressBook
     {
 
-        List<Contacts> contacts = new List<Contacts>();
+        public List<Contacts> contacts = new List<Contacts>();
 
         public void AddContact(string name, string address, string city, string state, string zip, string phoneNo, string email)
         {
+
 
             contacts.Add(new Contacts()
             {
@@ -27,7 +28,9 @@ namespace Address_Book
             });
             Console.WriteLine($"Contact of {name} is added");
 
+
         }
+
 
         public void Edit(string name)
         {

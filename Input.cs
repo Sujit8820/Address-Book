@@ -8,39 +8,40 @@ namespace Address_Book
 {
     class Input
     {
-        Collection book = new Collection();
+        public AddressBook book = new AddressBook();
+        Contacts contacts = new Contacts();
+        Dictionary<string, AddressBook> AddressBooks = new Dictionary<string, AddressBook>();
 
-        public void TakeInput(int number)
+        public void TakeInput(int number, string bookName)
         {
             for (int i = 1; i <= number; i++)
             {
 
-                Contacts contacts = new Contacts();
 
-                Console.WriteLine("\nEnter Name");
+                Console.Write("\nEnter Name: ");
                 contacts.name = Console.ReadLine();
 
-                Console.WriteLine("Enter address");
+                Console.Write("Enter address: ");
                 contacts.address = Console.ReadLine();
 
-                Console.WriteLine("Enter city");
+                Console.Write("Enter city: ");
                 contacts.city = Console.ReadLine();
 
-                Console.WriteLine("Enter state");
+                Console.Write("Enter state: ");
                 contacts.state = Console.ReadLine();
 
-                Console.WriteLine("Enter zip");
+                Console.Write("Enter zip: ");
                 contacts.zip = Console.ReadLine();
 
-                Console.WriteLine("Enter Phone number");
+                Console.Write("Enter Phone number: ");
                 contacts.phoneNo = Console.ReadLine();
 
-                Console.WriteLine("Enter Phone email");
+                Console.Write("Enter Phone email: ");
                 contacts.email = Console.ReadLine();
 
 
                 book.AddContact(contacts.name, contacts.address, contacts.city, contacts.state, contacts.zip, contacts.phoneNo, contacts.email);
-
+                AddressBooks.Add(bookName + i, book);
                 if (number > 1 && i < number)
                 {
                     Console.WriteLine("\n Add next details");
@@ -49,22 +50,22 @@ namespace Address_Book
 
             }
 
-            Console.WriteLine("\nEnter 1 for edit contact, 2 for remove contact & 3 for nothing");
+            Console.Write("\nEnter 1 for edit contact, 2 for remove contact & 3 for nothing: ");
             int option = Convert.ToInt32(Console.ReadLine());
 
             switch (option)
             {
                 case 1:
-                    Console.WriteLine("\nIf you want to edit contact plz enter name");
+                    Console.Write("\nIf you want to edit contact plz enter name: ");
                     string name = Console.ReadLine();
                     book.Edit(name);
                     break;
                 case 2:
-                    Console.WriteLine("\nIf you want to remove contact plz enter name");
+                    Console.Write("\nIf you want to remove contact plz enter name: ");
                     string Name = Console.ReadLine();
                     book.Remove(Name);
                     break;
-               default:
+                default:
                     Console.WriteLine("Ok");
                     break;
 
